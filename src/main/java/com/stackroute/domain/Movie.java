@@ -7,11 +7,17 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Movie {
-
-
     @Autowired
-    @Qualifier("actor2")
+    @Qualifier("actor1")
     private Actor actor;
+
+    public Movie(){}
+
+
+    public Movie(Actor actor)
+    {
+        this.actor = actor;
+    }
 
     @Override
     public String  toString() {

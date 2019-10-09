@@ -2,6 +2,7 @@ package com.stackroute;
 
 
 import com.stackroute.domain.Actor;
+import com.stackroute.domain.Movie;
 import org.springframework.context.annotation.*;
 
 @Configuration
@@ -20,5 +21,13 @@ public class AppConfig {
     @Bean(name = "actor3")
     public Actor getActor3(){
         return new Actor("Rakul","Female",28);
+    }
+
+    @Bean({"MovieA","MovieB"})
+    @Scope("prototype")
+    public Movie movie()
+    {
+        Movie movie = new Movie(getActor2());
+        return movie;
     }
 }
