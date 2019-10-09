@@ -10,6 +10,7 @@ public class Movie {
 
 
     @Autowired
+    @Qualifier("actor2")
     private Actor actor;
 
     @Override
