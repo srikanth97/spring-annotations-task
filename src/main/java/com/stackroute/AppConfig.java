@@ -8,6 +8,7 @@ import org.springframework.context.annotation.*;
 @Configuration
 @ComponentScan(basePackages = "com.stackroute.domain")
 public class AppConfig {
+
     @Bean(name = "actor1")
     public Actor getActor1(){
         return new Actor("Prabhas","Male",45);
@@ -23,11 +24,4 @@ public class AppConfig {
         return new Actor("Rakul","Female",28);
     }
 
-    @Bean({"MovieA","MovieB"})
-    @Scope("prototype")
-    public Movie movie()
-    {
-        Movie movie = new Movie(getActor2());
-        return movie;
-    }
 }

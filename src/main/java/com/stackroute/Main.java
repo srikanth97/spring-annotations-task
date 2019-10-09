@@ -10,9 +10,7 @@ public class Main {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
         context.register(AppConfig.class);
         context.refresh();
-        Movie movie1 = context.getBean("MovieA",Movie.class);
-        Movie movie2 = context.getBean("MovieB",Movie.class);
+        Movie movie1 = context.getBean(Movie.class);
         System.out.println(movie1.toString());
-        System.out.println(movie2 == movie1);
     }
 }

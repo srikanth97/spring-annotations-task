@@ -11,14 +11,6 @@ public class Movie {
     @Qualifier("actor1")
     private Actor actor;
 
-    public Movie(){}
-
-
-    public Movie(Actor actor)
-    {
-        this.actor = actor;
-    }
-
     @Override
     public String  toString() {
         return "Actor name : " +actor.getName() +
